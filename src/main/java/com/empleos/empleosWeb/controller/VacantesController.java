@@ -56,7 +56,7 @@ public class VacantesController {
 		vacantesService.agregar(vacante);
 		if (!multiPart.isEmpty()) {
 			//String ruta = "/empleos/img-vacantes/"; // Linux/MAC
-			String ruta = "c:/empleos/img-vacantes/"; // Windows
+			String ruta = "c:/empleosWeb/images/"; // Windows
 			String nombreImagen = Utileria.guardarArchivo(multiPart, ruta);
 			if (nombreImagen != null){ // La imagen si se subio
 			// Procesamos la variable nombreImagen
@@ -79,13 +79,13 @@ public class VacantesController {
 		binder.registerCustomEditor(LocalDate.class, new PropertyEditorSupport(){
 			@Override
 			public void setAsText(String text) throws IllegalArgumentException{
-				setValue(LocalDate.parse(text,DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+				setValue(LocalDate.parse(text,DateTimeFormatter.ofPattern("yyyy-MM-dd")));
 				
 			}
 			@Override
 			
 			public String getAsText()throws IllegalArgumentException{
-				return DateTimeFormatter.ofPattern("dd-MM-yyyy").format((LocalDate)getValue());
+				return DateTimeFormatter.ofPattern("yyyy-MM-dd").format((LocalDate)getValue());
 			}
 			
 			
