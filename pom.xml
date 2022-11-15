@@ -15,7 +15,7 @@
 	<description>Aplicación para ofertar empleos</description>
 	<properties>
 	
-		<java.version>8</java.version>
+		<java.version>17</java.version>
 		<maven-jar-plugin.version>3.0.0</maven-jar-plugin.version>
 
 	</properties>
