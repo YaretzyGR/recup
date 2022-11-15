@@ -28,7 +28,7 @@ public class CategoriasController {
 	public String guardar(Categoria categoria,BindingResult result, RedirectAttributes atributo, RedirectAttributes model) {
 		if(result.hasErrors()) {
 			System.out.println("Error");
-			return "categorias/formCategoria";
+			return "Categorias/formCategoria";
 		}else {
 		//System.out.println(categoria);
 		if ( categoria.getId() == null) {
@@ -59,7 +59,7 @@ public class CategoriasController {
 	}
 	@GetMapping("/crear")
 	public String nuevaCategoria(Categoria c) {
-		return "categorias/formCategoria";
+		return "Categorias/formCategoria";
 	}
 	
 	@GetMapping("/index")
@@ -69,14 +69,14 @@ public class CategoriasController {
 			System.out.println(c);
 		}
 		model.addAttribute("categorias",lista);
-		return "categorias/listCategorias";
+		return "Categorias/listCategorias";
 	}
 	
 	@GetMapping("/consultar")
 	public String consultar(@RequestParam("id")int idCategoria,Model model) {
 		Categoria categoria = serviceCategorias.buscarPorId(idCategoria);
 		model.addAttribute("categoria",categoria);
-		return "categorias/formCategoria";
+		return "Categorias/formCategoria";
 	}
 
 	
